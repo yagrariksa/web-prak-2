@@ -1,0 +1,177 @@
+.sidenav,
+.top {
+    position: relative;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.sidenav {
+    justify-content: space-between;
+    padding: 20px;
+    width: 300px;
+    background-image:
+        linear-gradient(76.3deg,
+            rgba(44, 62, 78, 1) 12.6%,
+            rgba(69, 103, 131, 1) 82.8%);
+    padding-top: 30px;
+    color: #f0f0f0 !important;
+}
+
+.top {
+    overflow: hidden;
+}
+
+.sidenav .footer {
+    position: relative;
+    box-shadow: 0px 5px 10px 9px #00000030;
+    padding: 10px;
+    border-radius: 7px;
+    transition: all ease .2s;
+    border: 1px dashed #f0f0f0;
+}
+
+.sidenav .footer:hover {
+    background-color: #ff00006c;
+}
+
+.header {
+    position: relative;
+}
+
+.header span.title {
+    font-size: 28px;
+}
+
+.header span.subtitle {
+    font-size: 11px;
+    font-weight: 600;
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+
+.menu,
+.menu .menu-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu {
+    height: 100%;
+    gap: 20px;
+    overflow-y: scroll;
+    padding-right: 5px;
+}
+
+.menu-group span.menu-title {
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    /* opacity: 0.7 ; */
+    cursor: pointer;
+}
+
+.menu-group span.menu-title.collapse .col-positive {
+    display: none;
+}
+
+.menu-group span.menu-title:not(.collapse) .col-negative {
+    display: none;
+}
+
+.menu-group hr {
+    margin-top: 5px;
+}
+
+.menu-group .menu-a {
+    padding: 10px 0;
+    padding-left: 10px;
+    transition: all ease .2s;
+}
+
+span.menu-title:hover,
+.menu-group .menu-a:not(.active):hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menu-group .menu-a.active {
+    background-image:
+        linear-gradient(109.5deg, rgba(76, 221, 242, 0.5) 11.2%,
+            rgba(92, 121, 255, 0.5) 91.1%);
+    /* background-color: rgba(251, 255, 36, 0.2); */
+}
+
+
+
+/* Scrollbar milik menu */
+.menu::-webkit-scrollbar {
+    width: 5px;
+}
+
+.menu::-webkit-scrollbar-button {
+    /* 2 */
+}
+
+.menu::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    border-radius: 10px;
+}
+
+.menu::-webkit-scrollbar-track-piece {
+    display: none;
+}
+
+.menu::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.menu::-webkit-scrollbar-corner {
+    /* 6 */
+}
+
+.menu::-webkit-resizer {
+    /* 7 */
+}
+
+.topnav {
+    display: none;
+}
+
+@media screen and (max-width: 780px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidenav {
+        position: fixed;
+        padding-top: 70px;
+        transform: translateX(-100%);
+        z-index: 99;
+
+        transition: all ease .2s;
+    }
+
+    .sidenav.show {
+        transform: translateX(0%);
+    }
+
+    .topnav {
+        cursor: pointer;
+        z-index: 100;
+        background-image:
+        linear-gradient(76.3deg,
+            rgba(44, 62, 78, 1) 12.6%,
+            rgba(69, 103, 131, 1) 82.8%);
+        position: relative;
+        display: inline-block;
+        padding: 10px;
+        font-size: 24px;
+        color: #f0f0f0;
+    }
+    
+}

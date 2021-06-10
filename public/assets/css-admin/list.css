@@ -1,0 +1,84 @@
+.grid-system {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border: 0.5px solid var(--dark-blue);
+    max-height: 160px;
+    overflow: hidden;
+}
+
+.card-img {
+    border-right: 0.5px solid var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img img {
+    height: 160px;
+}
+
+.card-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+span.card-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+span.card-auth {
+    padding: 3px 5px;
+    background-color: var(--dark-blue);
+    color: white;
+    border-radius: 3px;
+    width: fit-content;
+}
+
+span.card-action {
+    display: flex;
+    gap: 10px;
+}
+
+span.card-action a.btn-edit {
+    background-color: rgba(0, 128, 0, 0.25);
+}
+
+span.card-action a.btn-edit:hover {
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+span.card-action a.btn-delete {
+    background-color: rgba(255, 0, 0, 0.25);
+}
+
+span.card-action a.btn-delete:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+
+@media screen and (min-width: 1430px) {
+    .grid-system {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .card {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .grid-system {
+        grid-template-columns: 1fr;
+    }
+}

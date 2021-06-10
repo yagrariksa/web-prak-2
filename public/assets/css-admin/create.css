@@ -1,0 +1,67 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+input,
+select,
+textarea {
+    padding: 7px 15px;
+    outline: none;
+    border: none;
+
+    border: 1px solid var(--dark-blue);
+    background-image:
+        radial-gradient(circle 321px at 8.3% 75.7%,
+            rgba(209, 247, 241, 1) 0%,
+            rgb(213, 249, 243) 81%);
+    color: var(--dark-blue);
+    font-size: 16px;
+}
+
+button.btn-submit {
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+
+.btn-grad {
+    background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)
+}
+
+.btn-grad {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+@media screen and (min-width: 1430px) {
+    form {
+        width: 50%;
+    }
+}

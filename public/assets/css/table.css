@@ -1,0 +1,98 @@
+table.table-owner {
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: rgba(17, 17, 17, 0);
+}
+
+.table-owner td, .table-owner th {
+    text-align: center;
+    padding: 8px;
+}
+
+.table-owner td {
+    font-size: 14px;
+}
+
+.table-owner thead th {
+    color: #ffffff;
+    background: #4FC3A1;
+}
+
+.table-owner thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #324960;
+}
+
+.table-owner tr:nth-child(even) {
+    background: #363636ad;
+}
+
+/* @media (max-width: 767px) {
+    .table-owner {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }
+    .table-owner thead, .table-owner tbody, .table-owner thead th {
+        display: block;
+    }
+    .table-owner thead th:last-child{
+        border-bottom: none;
+    }
+    .table-owner thead {
+        float: left;
+    }
+    .table-owner tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .table-owner td, .table-owner th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .table-owner thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .table-owner tbody tr {
+        display: table-cell;
+    }
+    .table-owner tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .table-owner tr:nth-child(even) {
+        background: transparent;
+    }
+    .table-owner tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .table-owner tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .table-owner tbody td {
+        display: block;
+        text-align: center;
+    }
+} */
