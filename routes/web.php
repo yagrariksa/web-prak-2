@@ -3,6 +3,7 @@
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\Web\CartController;
 use App\Http\Controllers\Web\DashboardController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [DashboardController::class, 'index'])->name('client.home');
+Route::get('/shop',[ShopController::class,'shop'])->name('client.shop');
+Route::get('/shop/{id}',[ShopController::class,'show'])->name('shop.product');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('client.login');
