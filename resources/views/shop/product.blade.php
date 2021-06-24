@@ -80,13 +80,13 @@
                     <p>For System Requirement Click <a href="https://www.pcgamebenchmark.com/it-takes-two-system-requirements"">here</a></p>
                 </div>
                 <div class="buy">
-                    <h1>Buy It Takes Two</h1>
+                    <h1>Buy {{$game->name}}</h1>
                     <hr>
                     <div class="standard">
-                        <h2>{{ $game->desc }}</h2>
+                        <h2>{{$game->desc}}</h2>
                         <div class="price">
                             <h3>{{ $game->price }}</h2>
-                            <button type="button" class="btn btn-dark">Add to Cart</button>
+                            <a href="{{route('cart.tambah',['id'=>$game->id])}}"><button type="button" class="btn btn-dark">Add to Cart</button></a>
                         </div>
                     </div>
                     <br>

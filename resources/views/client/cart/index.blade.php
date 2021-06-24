@@ -30,8 +30,6 @@
     $total = 0;
     @endphp
     @if (sizeof($listcart) > 0)
-
-
         <div class="grid">
             @foreach ($listcart as $item)
                 <div class="cart">

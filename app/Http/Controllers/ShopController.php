@@ -19,8 +19,7 @@ class ShopController extends Controller
     public function show($id)
     {
         $index=Game::find($id);
-        $data=Game::all();
-        return view('shop.product',['listgame' => $data,],compact('index'));
+        return view('shop.product',['game' => $index,]);
     }
 
     /**
