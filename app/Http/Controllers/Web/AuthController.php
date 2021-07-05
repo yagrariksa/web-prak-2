@@ -59,9 +59,9 @@ class AuthController extends Controller
         return redirect()->route('client.home');
     }
 
-    public function show($id)
+    public function profile($id)
     {
-        //
+        return view('client.auth.profile');
     }
 
     public function edit($id)

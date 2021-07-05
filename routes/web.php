@@ -30,6 +30,7 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('client.logout');
+    Route::get('/profile/{id}',[AuthController::class, 'profile'])->name('client.profile');
     Route::get('cart', [CartController::class, 'index'])->name('cart.index');
     Route::get('cart/tambah/{id}', [CartController::class, 'tambah'])->name('cart.tambah');
     Route::get('cart/hapus/{id}', [CartController::class, 'hapus'])->name('cart.hapus');

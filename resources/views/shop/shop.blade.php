@@ -1,34 +1,7 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Store</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+@extends('client.template.client')
 
-
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
 <body>
-    <header>
-        <div class="collapse bg-dark" id="navbarHeader">
-            <div class="container">
-            </div>
-        </div>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-            <div class="container">
-                <a href="#" class="navbar-brand d-flex align-items-center">
-                    <strong>NAVBAR</strong>
-                </a>
-            </div>
-        </div>
-    </header>
+@section('content')
 <main>
         <div class="album py-5 bg-light">
             <div class="container">
@@ -77,7 +50,7 @@
                     <td><a class="btn" href="{{ route('shop.product', $game->id) }}">{{ $game->name }}</a></td>
                     <td>{{ $game->desc }}</td>
                     <td class="uang">{{ $game->price }}</td>
-                    <td>Add to Cart</td>
+                   <td> <a href="{{route('cart.tambah',['id'=>$game->id])}}">Add to Cart</a></td>
                 </tr>
             @endforeach
             </tbody>
