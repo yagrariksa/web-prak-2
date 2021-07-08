@@ -1,37 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('client.template.client')
+@section('content')
+    <div class="d-flex justify-content-center mt-4 ">
+        <div class="card">
+            <div class="card-header">
+                <h2>Login</h2>
+            </div>
+            <form class="card-body  p-4" action="{{ route('client.login') }}" method="post">
+                @csrf
+                <div class="form-group mb-3">
+                    <label for="username">Username :</label>
+                    <input class="form-control" type="text" id="username" name="email" value="{{ old('email') }}"
+                        placeholder="Your Username">
+                    @error('email')
+                        <span style="color: red">{{ $message }}</span>
+                    @enderror
+                </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-</head>
-
-<body>
-    <h1>login</h1>
-
-    <form action="{{ route('client.login') }}" method="post">
-        @csrf
-        <div class="input-group">
-            <label for="username">username</label>
-            <input type="text" id="username" name="email" value="{{old('email')}}">
-            @error('email')
-                <span style="color: red">{{ $message }}</span>
-            @enderror
+                <div class="form-group mb-3">
+                    <label for="password">Password :</label>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+                    @error('password')
+                        <span style="color: red">{{ $message }}</span>
+                    @enderror
+                </div>
+                <button type="submit" class="btn btn-primary" value="submit">Login</button>
+            </form>
+            <div class="card-footer">
+                New to Tumbasbarang? <a href="{{ route('client.register') }}">Register</a>
+            </div>
         </div>
-
-        <div class="input-group">
-            <label for="password">password</label>
-            <input type="password" id="password" name="password">
-            @error('password')
-                <span style="color: red">{{ $message }}</span>
-            @enderror
-        </div>
-        <button type="submit">LOGIN</button>
-    </form>
-
-    <a href="{{route('client.register')}}">Register</a>
-</body>
-
-</html>
+    </div>
+@endsection

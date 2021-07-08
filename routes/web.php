@@ -17,8 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->name('client.home');
-Route::get('/shop',[ShopController::class,'shop'])->name('client.shop');
+Route::get('/', [ShopController::class,'shop'])->name('client.shop');
 Route::get('/shop/{id}',[ShopController::class,'show'])->name('shop.product');
 
 Route::middleware('guest')->group(function () {
@@ -30,7 +29,7 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('client.logout');
-    Route::get('/profile/{id}',[AuthController::class, 'profile'])->name('client.profile');
+    Route::get('/profile',[AuthController::class, 'profile'])->name('client.profile');
     Route::get('cart', [CartController::class, 'index'])->name('cart.index');
     Route::get('cart/tambah/{id}', [CartController::class, 'tambah'])->name('cart.tambah');
     Route::get('cart/hapus/{id}', [CartController::class, 'hapus'])->name('cart.hapus');

@@ -1,12 +1,8 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
+<header class="site-header sticky-top">
 <div class="p-3 bg-dark text-white">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="{{route('client.home')}}" class="nav-link px-2 text-white"><strong>Dashboard</strong></a></li>
             <li><a href="{{route('client.shop')}}" class="nav-link px-2 text-white"><strong>Store</strong></a></li>
             @if (Auth::user())
             <li><a href="{{ route('cart.index') }}" class="nav-link px-2 text-white"><strong>Cart</strong></a></li>
@@ -26,3 +22,4 @@
         @endif
     </div>
 </div>
+</header>

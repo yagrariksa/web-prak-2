@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Cart;
-use App\Models\DetailTransaksi;
+
 use App\Models\Game;
 use Illuminate\Http\Request;
 
@@ -11,15 +10,15 @@ class ShopController extends Controller
     public function shop()
     {
         $data = Game::all();
-        return view('shop.shop',[
+        return view('shop.shop', [
             'listgame' => $data,
         ]);
     }
 
     public function show($id)
     {
-        $index=Game::find($id);
-        return view('shop.product',['game' => $index,]);
+        $index = Game::find($id);
+        return view('shop.product', ['game' => $index,]);
     }
 
     /**

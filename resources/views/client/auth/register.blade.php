@@ -1,47 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
-</head>
-<body>
-    <h1>Register</h1>
+@extends('client.template.client')
 
-    <form action="{{route('client.register')}}" method="post">
-        @csrf
-        <div class="input-group">
-            <label for="name">name</label>
-            <input type="text" id="name" name="name" value="{{old('name')}}">
-            @error('name')
-                <span style="color:red">{{$message}}</span>
-            @enderror
+@section('content')
+    <div class="d-flex justify-content-center mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h1>Register</h1>
+            </div>
+            <form class="card-body p-4" action="{{ route('client.register') }}" method="post">
+                @csrf
+                <div class="form-group mb-3">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" id="name" name="name" value="{{ old('name') }}"
+                        placeholder="Name">
+                    @error('name')
+                        <span style="color:red">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" id="username" name="email" value="{{ old('email') }}"
+                        placeholder="Email">
+                    @error('email')
+                        <span style="color:red">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="password">Password</label>
+                    <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+                    @error('password')
+                        <span style="color:red">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="pwd">Password Confirmation</label>
+                    <input class="form-control" type="password" id="pwd" name="password_confirmation"
+                        placeholder="Re-Type Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <div class="card-footer">
+                Already have an Account? <a href="{{ route('client.login') }}">Login</a>
+            </div>
         </div>
-
-        <div class="input-group">
-            <label for="username">username</label>
-            <input type="text" id="username" name="email"  value="{{old('email')}}">
-            @error('email')
-                <span style="color:red">{{$message}}</span>
-            @enderror
-        </div>
-
-        <div class="input-group">
-            <label for="password">password</label>
-            <input type="password" id="password" name="password">
-            @error('password')
-                <span style="color:red">{{$message}}</span>
-            @enderror
-        </div>
-
-        <div class="input-group">
-            <label for="pwd">password confirmation</label>
-            <input type="password" id="pwd" name="password_confirmation">
-        </div>
-        <button type="submit">LOGIN</button>
-    </form>
-
-    <a href="{{route('client.login')}}">login</a>
-</body>
-</html>
+    @endsection
