@@ -19,7 +19,7 @@ class CartController extends Controller
             'listcart' => $data,
         ]);
     }
-
+    
     public function tambah($id)
     {
         $data = Cart::where('user_id', Auth::user()->id)->where('game_id', $id)->first();

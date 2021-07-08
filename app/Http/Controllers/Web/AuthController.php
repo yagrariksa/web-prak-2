@@ -26,7 +26,7 @@ class AuthController extends Controller
         if (Auth::attempt($request->only('email','password'))) {
             $request->session()->regenerate();
 
-            return redirect()->route('client.home');
+            return redirect()->route('client.shop');
         }
 
         return back()->withErrors([
@@ -56,12 +56,13 @@ class AuthController extends Controller
 
         Auth::loginUsingId($data->id);
 
-        return redirect()->route('client.home');
+        return redirect()->route('client.shop');
     }
 
-    public function show($id)
+    public function profile()
     {
-        //
+        dd($user=Auth::user());
+        return view('client.auth.profile');
     }
 
     public function edit($id)
@@ -78,6 +79,7 @@ class AuthController extends Controller
     {
         Auth::logout();
 
-        return redirect()->route('client.home');
+        return redirect()->route('client.shop');
     }
+
 }
